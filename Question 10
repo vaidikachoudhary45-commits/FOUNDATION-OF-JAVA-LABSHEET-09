@@ -1,0 +1,43 @@
+import java.io.*;
+import java.util.*;
+
+class Q10 {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        FileWriter fw = new FileWriter("employees.txt");
+
+        System.out.print("Enter Employee ID: ");
+        String id = sc.nextLine();
+
+        System.out.print("Enter Employee Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Department: ");
+        String dept = sc.nextLine();
+
+        System.out.print("Enter Salary: ");
+        String salary = sc.nextLine();
+
+        fw.write(id + "," + name + "," + dept + "," + salary);
+        fw.close();
+
+        BufferedReader br = new BufferedReader(
+            new FileReader("employees.txt"));
+
+        String s;
+        boolean found = false;
+
+        while ((s = br.readLine()) != null) {
+            if (s.startsWith(id + ",")) {
+                System.out.println("Employee Record: " + s);
+                found = true;
+                break;
+            }
+        }
+
+        if (!found)
+            System.out.println("Employee record not found.");
+
+        br.close();
+    }
+}
