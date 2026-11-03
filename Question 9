@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+
+class Q9 {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        FileWriter fw = new FileWriter("student_records.txt");
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.print("Enter Roll No, Name, Course, Marks: ");
+            fw.write(sc.nextInt() + " " + sc.next() + " "
+                    + sc.next() + " " + sc.nextInt() + "\n");
+        }
+
+        fw.close();
+
+        BufferedReader br = new BufferedReader(
+            new FileReader("student_records.txt"));
+
+        String s;
+        System.out.println("\nStudent Records:");
+
+        while ((s = br.readLine()) != null)
+            System.out.println(s);
+
+        br.close();
+    }
+}
