@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+
+class Q6 {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(
+            new FileReader("notes.txt"));
+
+        System.out.print("Enter word: ");
+        String word = sc.nextLine();
+
+        int count = 0;
+        String s;
+
+        while ((s = br.readLine()) != null) {
+            for (String w : s.split("\\W+")) {
+                if (w.equalsIgnoreCase(word))
+                    count++;
+            }
+        }
+
+        br.close();
+
+        if (count > 0)
+            System.out.println("Word found " + count + " times.");
+        else
+            System.out.println("Word not found.");
+    }
+}
