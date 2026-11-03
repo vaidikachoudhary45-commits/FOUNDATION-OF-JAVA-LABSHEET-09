@@ -1,0 +1,15 @@
+import java.io.*;
+
+class Q1 {
+    public static void main(String[] args) throws IOException {
+        FileWriter f = new FileWriter("student.txt");
+
+        f.write("Name: Vaidika\n");
+        f.write("Roll No: 101\n");
+        f.write("Course: BCA\n");
+        f.write("Semester: 3");
+
+        f.close();
+        System.out.println("File created and data written successfully.");
+    }
+}
