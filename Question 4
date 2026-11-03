@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+class Q4 {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+
+        FileWriter fw = new FileWriter("students.txt", true);
+
+        System.out.print("Enter Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Roll No: ");
+        int roll = sc.nextInt();
+
+        System.out.print("Enter Marks: ");
+        int marks = sc.nextInt();
+
+        fw.write("\n" + name + " " + roll + " " + marks);
+        fw.close();
+
+        System.out.println("Record added successfully.");
+    }
+}
